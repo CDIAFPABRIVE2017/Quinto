@@ -32,12 +32,15 @@ namespace QuintoWindows
 
         void GestionnaireMarche(EtatManche etatManche)
         {
-            //switch (etatManche)
-            //{
-            //    case EtatManche.Debut:
-
-
-            //}
+            switch (etatManche)
+            {
+                case EtatManche.Debut:
+                    break;
+                case EtatManche.Fin:
+                    break;
+                default:
+                    break;
+            }
 
         }
         private void lblChrono_Click(object sender, EventArgs e)
