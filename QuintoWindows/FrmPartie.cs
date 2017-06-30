@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using QuintoDll;
 
 namespace QuintoWindows
 {
     public partial class FrmPartie : Form
     {
-
+        LancementManche manche = new LancementManche();
         enum EtatManche
         {
             Debut = 0,
@@ -35,6 +36,7 @@ namespace QuintoWindows
             switch (etatManche)
             {
                 case EtatManche.Debut:
+                    //txtAfficheMot.Text = manche.MotADecouvrir;
                     break;
                 case EtatManche.Fin:
                     break;
@@ -55,17 +57,20 @@ namespace QuintoWindows
 
         private void Lettre(object sender, EventArgs e)
         {
-            string Lettrebtn;
             Button btnGeneric = sender as Button;
-            Lettrebtn = btnGeneric.Text;
-           
+            manche.Lettre = btnGeneric.Text;
+
         }
 
         private void Partie_Load(object sender, EventArgs e)
         {
-
+            GestionnaireMarche(EtatManche.Debut);
         }
 
-       
+        private void txtAfficheMot_TextChanged(object sender, EventArgs e)
+        {
+            txtAfficheMot.Text = manche.MotADecouvrir;
+        }
+
     }
 }

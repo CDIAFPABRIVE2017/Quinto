@@ -5,15 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace JeuQuintoDll
+namespace QuintoDll
 {
     [Serializable()]
-    class LoadSave
+    public static class LoadSave
     {
         static HashSet<string> listeMots = new HashSet<string>();
         static string mot;
-        
-     
+
+        public static HashSet<string> ListeMots
+        {
+            get
+            {
+                return listeMots;
+            }
+
+            //set
+            //{
+            //    listeMots = value;
+            //}
+        }
 
         public static void LoadText(string path)
         {
@@ -30,13 +41,11 @@ namespace JeuQuintoDll
 
                 ligne = AfficheDico.ReadLine();
             }
-
             AfficheDico.Close();
             OuvreDico.Close();
-
         }
 
-        public void SaveText(string path, string motSaisie)
+        public static void SaveText(string path, string motSaisie)
         {   //crée un nouveau dossier 
             FileStream listeMot = new FileStream(path, FileMode.Open, FileAccess.ReadWrite);
             // Crée un StreaWriter pour écrire les variables ds le fichier txt
@@ -60,8 +69,8 @@ namespace JeuQuintoDll
             {
                 mot = Normalization(mot).ToUpper();
 
-                if (!listeMots.Contains(mot))
-                { listeMots.Add(mot);
+                if (!ListeMots.Contains(mot))
+                { ListeMots.Add(mot);
                   Console.WriteLine(mot);
                 }                
             }
