@@ -14,11 +14,12 @@ namespace QuintoWindows
     {
        
 
+            
         public FrmOptions()
         {
             InitializeComponent();
         }
 
-      
+       
     }
 }

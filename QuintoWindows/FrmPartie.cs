@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using QuintoDll;
 
 namespace QuintoWindows
 {
     public partial class FrmPartie : Form
     {
+        
 
         enum EtatManche
         {
@@ -20,16 +22,25 @@ namespace QuintoWindows
             Fin = 1,
 
         }
-        enum Etatpartie
+        enum EtatPartie
         {
-            Debut = 0,
-            Fin = 1,
+            Manches2 = 0,
+            Manches3 = 1,
+            Manches4 = 2,
+            Manches5 = 3,
+            Fin = 4
         }
         public FrmPartie()
         {
             InitializeComponent();
         }
+        void GestionnaireEtatPartie(EtatPartie etatPartie)
+        {
+            
+            
 
+
+        } 
         void GestionnaireMarche(EtatManche etatManche)
         {
             switch (etatManche)
@@ -63,7 +74,13 @@ namespace QuintoWindows
 
         private void Partie_Load(object sender, EventArgs e)
         {
+            ChargerPartie();
 
+        }
+
+        private void ChargerPartie()
+        {
+            
         }
 
        

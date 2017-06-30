@@ -19,7 +19,7 @@ namespace QuintoWindows
         {
             InitializeComponent();
         }
-        PiocheClass AjoutMot = new PiocheClass();
+     
         
         private void Ajout_Clk(object sender, EventArgs e)
         {
