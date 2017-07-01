@@ -9,18 +9,17 @@ namespace QuintoDll
 {
     public class LancementManche
     {
-      
-        bool partielancer = true;
-
-        int nbrErreur;
-        int mancheEnCours;
-        int nbrMancheMax;
-        DateTime debut = new DateTime();
-        DateTime fin = new DateTime();
-        Stopwatch chrono = new Stopwatch();
-        string motADecouvrir;
-        char[] motEncours;
-        string lettre;
+        #region champs
+                int nbrErreur;
+                int mancheEnCours;
+                int nbrMancheMax;
+                DateTime debut = new DateTime();
+                DateTime fin = new DateTime();
+                Stopwatch chrono = new Stopwatch();
+                string motADecouvrir;
+                char[] motEncours;
+                string lettre;
+        #endregion
 
         #region Propiréié
         public string MotADecouvrir
@@ -28,9 +27,8 @@ namespace QuintoDll
 
             get
             {
-
-                return ExtraireMot(LoadSave.ListeMots);
-
+                return "bonjour";
+                //return ExtraireMot(LoadSave.ListeMots);
             }
         }
 
@@ -56,28 +54,37 @@ namespace QuintoDll
 
             set
             {
-                AfficheUnderscore();
+                for (int i =0; i < MotADecouvrir.Length; i++)
+                {
+                    motEncours[i] = MotADecouvrir[i];
+                }
                 motEncours = value;
             }
         }
 
+        public int NbrErreur
+        { get => nbrErreur; set => nbrErreur = value; }
+        public int MancheEnCours { get => /*mancheEnCours*/1; set => mancheEnCours = value; }
+        public int NbrMancheMax { get => /*nbrMancheMax*/4; set => nbrMancheMax = value; }
+
+
+
         #endregion
-        public void AfficheChrono()
-        {
+        //public void AfficheChrono()
+        //{
 
 
-            if (partielancer)
-            {
-                chrono.Start();
-                //Thread.Sleep(10000);
-            }
+        //    if (partielancer)
+        //    {
+        //        chrono.Start();
+        //    }
 
-            if (partielancer == false)
-            {
-                chrono.Stop();
-                TimeSpan ts = chrono.Elapsed;
-            }
-        }
+        //    if (partielancer == false)
+        //    {
+        //        chrono.Stop();
+        //        TimeSpan ts = chrono.Elapsed;
+        //    }
+        //}
         public string ExtraireMot(HashSet<string> s)
         {
             Random rand = new Random();
@@ -91,15 +98,15 @@ namespace QuintoDll
                 }
                 i++;
             }
-            return null;
+             return null;
         }
 
 
      public string AfficheUnderscore()
     {
-        for (int i = 0; i < motADecouvrir.Length; i++)
+        for (int i = 0; i < MotADecouvrir.Length; i++)
         {
-            motEncours[i] = '_';
+            MotEncours[i] = '_';
         }
         return new string(motEncours);
     }
@@ -107,15 +114,39 @@ namespace QuintoDll
     public string DecouvreMot()
     {
 
-        foreach (char i in motEncours)
+        foreach (char i in MotEncours)
         {
-            if (motEncours[i].ToString() == Lettre)
-            {
-                motEncours[i] = Lettre[0];
-            }
+                if (MotEncours[i].ToString() == Lettre)
+                {
+                    MotEncours[i] = Lettre[0];
+                }
+                else NbrErreur++;
         }
         return new string(motEncours);
     }
+
+        public bool AddErreur()
+        {
+            foreach (char i in MotEncours)
+            {
+                if (MotEncours[i].ToString() != Lettre)
+                {
+                    return true;
+                }
+                
+            }return false;
+        }
+        public bool MancheGagne()
+        {
+            if (MotEncours[] == MotADecouvrir && NbrErreur <= 9)
+            {
+                return true;
+            }
+
+            if (NbrErreur < 9)
+            { 
+            else return false;
+            }
      
 
       
