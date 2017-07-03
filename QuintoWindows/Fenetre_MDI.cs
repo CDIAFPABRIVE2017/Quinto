@@ -30,7 +30,8 @@ namespace QuintoWindows
 
         private void btnNouvellePartie_Click(object sender, EventArgs e)
         {
-           
+            FrmPartie fPartie = new FrmPartie();
+            fPartie.Show();
         }
 
         private void btnOption_Click(object sender, EventArgs e)

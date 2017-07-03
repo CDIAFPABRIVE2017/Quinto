@@ -14,7 +14,6 @@ namespace QuintoWindows
 {
     public partial class FrmPartie : Form
     {
-        
 
         enum EtatManche
         {
@@ -46,43 +45,59 @@ namespace QuintoWindows
             switch (etatManche)
             {
                 case EtatManche.Debut:
+                    manche.NbrErreur = 0;
+                    txtAfficheMot.Text= manche.MotADecouvrir;
                     break;
                 case EtatManche.Fin:
+                    panel1.Enabled = false;
+                    if(manche.MancheGagne())
+                    {
+                        MessageBox.Show("Félicitation vous avez trouvé le mot ! \r\n Passez à la manche suivante.", "Manche gagné", MessageBoxButtons.OK);
+                    }
+                    MessageBox.Show("Vous avez perdu :( !", "Partie perdue", MessageBoxButtons.OK);
                     break;
                 default:
                     break;
             }
 
         }
+        private void Partie_Load(object sender, EventArgs e)
+        {
+            GestionnaireMarche(EtatManche.Debut);
+        }
+        private void txtAfficheMot_TextChanged(object sender, EventArgs e)
+        {
+            txtAfficheMot.Text = manche.MotADecouvrir;
+        }
         private void lblChrono_Click(object sender, EventArgs e)
         {
           
         }
-
+        private void lblManche_TextChanged(object sender, EventArgs e)
+        {
+            lblManche.Text = "Manche :";
+        }
         private void txtNbrManches_TextChanged(object sender, EventArgs e)
         {
-            txtNbrManches.Text = ("Manche {0}/{1}");
+            txtNbrManches.Text = (manche.MancheEnCours +"/"+ manche.NbrMancheMax);
         }
-
+        private void lblNbrEssai_TextChanged(object sender, EventArgs e)
+        {
+            lblNbrEssai.Text = "Nombre d'essais restant :" + (9 - manche.NbrErreur);
+        }
         private void Lettre(object sender, EventArgs e)
         {
-            string Lettrebtn;
             Button btnGeneric = sender as Button;
-            Lettrebtn = btnGeneric.Text;
-           
+            manche.Lettre = btnGeneric.Text;
+            btnGeneric.Enabled = false;
+
         }
 
         private void Partie_Load(object sender, EventArgs e)
         {
-            ChargerPartie();
 
         }
 
-        private void ChargerPartie()
-        {
-            
-        }
-
-       
+      
     }
 }

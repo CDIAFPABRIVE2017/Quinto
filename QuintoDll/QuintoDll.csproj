@@ -42,11 +42,16 @@
   <ItemGroup>
     <Compile Include="ICollectionMetier.cs" />
     <Compile Include="Joueurs.cs" />
-    <Compile Include="LancementPartie.cs" />
+    <Compile Include="LancementManche.cs" />
     <Compile Include="LoadSave.cs" />
     <Compile Include="OptionsClass.cs" />
     <Compile Include="PiocheClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Score.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +59,13 @@
       <Project>{596ad11b-f3bf-43c3-83a0-fc50ca1ab49b}</Project>
       <Name>Utilitaires</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
