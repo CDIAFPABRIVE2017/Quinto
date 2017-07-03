@@ -14,19 +14,9 @@ namespace QuintoWindows
 {
     public partial class FrmPartie : Form
     {
-        private Label lblManche;
         LancementManche manche = new LancementManche();
-        enum EtatManche
-        {
-            Debut = 0,
-            Fin = 1,
 
-        }
-        enum Etatpartie
-        {
-            Debut = 0,
-            Fin = 1,
-        }
+      
         public FrmPartie()
         {
             InitializeComponent();
@@ -38,7 +28,7 @@ namespace QuintoWindows
             {
                 case EtatManche.Debut:
                     manche.NbrErreur = 0;
-                    txtAfficheMot.Text= manche.MotADecouvrir;
+                    txtAfficheMot.Text = manche.AfficheUnderscore().ToString();
                     break;
                 case EtatManche.Fin:
                     panel1.Enabled = false;
@@ -59,7 +49,7 @@ namespace QuintoWindows
         }
         private void txtAfficheMot_TextChanged(object sender, EventArgs e)
         {
-            txtAfficheMot.Text = manche.MotADecouvrir;
+            txtAfficheMot.Text = manche.MotEncours.ToString();
         }
         private void lblChrono_Click(object sender, EventArgs e)
         {
@@ -81,17 +71,13 @@ namespace QuintoWindows
         {
             Button btnGeneric = sender as Button;
             manche.Lettre = btnGeneric.Text;
+            manche.DecouvreMot();
             btnGeneric.Enabled = false;
-
+            
         }
 
+      
+
         
-       
-
-       
-
-      
-
-      
     }
 }

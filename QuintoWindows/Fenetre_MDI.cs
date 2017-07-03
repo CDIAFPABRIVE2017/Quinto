@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuintoDll;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,8 +43,18 @@ namespace QuintoWindows
 
         private void btnAlimenterPioche_Click(object sender, EventArgs e)
         {
-            FrmPioche fPioche = new FrmPioche();
+            FrmAlimenterPioche fPioche = new FrmAlimenterPioche();
             fPioche.Show();
+        }
+
+        private void FrmQuinto_Load(object sender, EventArgs e)
+        {
+            if (PiocheClass.ListeMots.Count == 0)
+            {
+                FrmAlimenterPioche alimenterPioche = new FrmAlimenterPioche();
+                alimenterPioche.MdiParent = this;
+                alimenterPioche.Show();
+            }
         }
     }
 }

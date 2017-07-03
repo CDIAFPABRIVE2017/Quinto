@@ -1,6 +1,6 @@
 ﻿namespace QuintoWindows
 {
-    partial class FrmPioche
+    partial class FrmAlimenterPioche
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,12 @@
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbPioche = new System.Windows.Forms.ListBox();
             this.lbPoubelle = new System.Windows.Forms.ListBox();
+            this.ofdSource = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ouvrirFichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAlimenterPioche = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtAjout
@@ -87,19 +92,55 @@
             this.lbPoubelle.Size = new System.Drawing.Size(201, 381);
             this.lbPoubelle.TabIndex = 9;
             // 
-            // FrmPioche
+            // ofdSource
+            // 
+            this.ofdSource.FileName = "openFileDialog1";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ouvrirFichierToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(913, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ouvrirFichierToolStripMenuItem
+            // 
+            this.ouvrirFichierToolStripMenuItem.Name = "ouvrirFichierToolStripMenuItem";
+            this.ouvrirFichierToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.ouvrirFichierToolStripMenuItem.Text = "Ouvrir fichier";
+            this.ouvrirFichierToolStripMenuItem.Click += new System.EventHandler(this.ouvrirFichierToolStripMenuItem_Click);
+            // 
+            // btnAlimenterPioche
+            // 
+            this.btnAlimenterPioche.Location = new System.Drawing.Point(328, 257);
+            this.btnAlimenterPioche.Name = "btnAlimenterPioche";
+            this.btnAlimenterPioche.Size = new System.Drawing.Size(125, 23);
+            this.btnAlimenterPioche.TabIndex = 10;
+            this.btnAlimenterPioche.Text = "Alimenter Pioche";
+            this.btnAlimenterPioche.UseVisualStyleBackColor = true;
+            this.btnAlimenterPioche.Click += new System.EventHandler(this.btnAlimenterPioche_Click);
+            // 
+            // FrmAlimenterPioche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 460);
+            this.ClientSize = new System.Drawing.Size(913, 486);
+            this.Controls.Add(this.btnAlimenterPioche);
             this.Controls.Add(this.lbPoubelle);
             this.Controls.Add(this.lbPioche);
             this.Controls.Add(this.btn_Retire);
             this.Controls.Add(this.btn_Ajout);
             this.Controls.Add(this.txtAjout);
-            this.Name = "FrmPioche";
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "FrmAlimenterPioche";
             this.Text = "Pioche";
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,5 +153,9 @@
         private System.Windows.Forms.ErrorProvider error;
         private System.Windows.Forms.ListBox lbPioche;
         private System.Windows.Forms.ListBox lbPoubelle;
+        private System.Windows.Forms.OpenFileDialog ofdSource;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ouvrirFichierToolStripMenuItem;
+        private System.Windows.Forms.Button btnAlimenterPioche;
     }
 }

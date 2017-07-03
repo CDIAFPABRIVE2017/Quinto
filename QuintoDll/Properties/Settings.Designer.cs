@@ -22,17 +22,5 @@ namespace QuintoDll.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("F:\\Application AFPA\\Projet_Jeu_MPM precillia\\Dico.txt")]
-        public string path {
-            get {
-                return ((string)(this["path"]));
-            }
-            set {
-                this["path"] = value;
-            }
-        }
     }
 }

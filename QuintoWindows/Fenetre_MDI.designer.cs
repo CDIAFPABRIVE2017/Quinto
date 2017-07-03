@@ -92,6 +92,7 @@
             this.IsMdiContainer = true;
             this.Name = "FrmQuinto";
             this.Text = "Quinto";
+            this.Load += new System.EventHandler(this.FrmQuinto_Load);
             this.ResumeLayout(false);
 
         }

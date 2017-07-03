@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuintoDll;
 
 namespace QuintoWindows
 {
@@ -16,6 +17,8 @@ namespace QuintoWindows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            PiocheClass.LoadPioche(Properties.Settings.Default.pathPioche);
+          
             Application.Run(new FrmQuinto());
         }
     }

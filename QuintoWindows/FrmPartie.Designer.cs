@@ -406,6 +406,7 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
+
             // 
             // Partie
             // 
@@ -461,5 +462,7 @@
         private System.Windows.Forms.TextBox txtNbrManches;
         private System.Windows.Forms.Label lblChrono;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblManche;
+       
     }
 }

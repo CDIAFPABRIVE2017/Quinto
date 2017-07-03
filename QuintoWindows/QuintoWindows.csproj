@@ -52,14 +52,16 @@
     <Compile Include="Fenetre_MDI.designer.cs">
       <DependentUpon>Fenetre_MDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAlimenterPioche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAlimenterPioche.Designer.cs">
+      <DependentUpon>FrmAlimenterPioche.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOptions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmOptions.Designer.cs" />
-    <Compile Include="FrmPioche.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPioche.Designer.cs" />
     <Compile Include="FrmScores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,8 +85,10 @@
     <EmbeddedResource Include="Fenetre_MDI.resx">
       <DependentUpon>Fenetre_MDI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAlimenterPioche.resx">
+      <DependentUpon>FrmAlimenterPioche.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmOptions.resx" />
-    <EmbeddedResource Include="FrmPioche.resx" />
     <EmbeddedResource Include="FrmScores.resx">
       <DependentUpon>FrmScores.cs</DependentUpon>
     </EmbeddedResource>

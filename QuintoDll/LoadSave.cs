@@ -11,6 +11,7 @@ namespace QuintoDll
     public static class LoadSave
     {
         static HashSet<string> listeMots = new HashSet<string>();
+        static HashSet<string> listeIntermediaire = new HashSet<string>();
         static string mot;
 
         public static HashSet<string> ListeMots
@@ -26,6 +27,20 @@ namespace QuintoDll
             //}
         }
 
+        public static void SaveListe (string pathEcriture)
+        {
+            FileStream listeMot = new FileStream(pathEcriture, FileMode.Open, FileAccess.ReadWrite);
+            StreamWriter nvxMot = new StreamWriter(listeMot);
+
+            foreach (string mot in listeMots)
+            {
+                nvxMot.WriteLine(mot);
+            }
+
+            nvxMot.Close();
+            listeMot.Close();
+
+        }
         public static void LoadText(string path)
         {
           
@@ -45,22 +60,21 @@ namespace QuintoDll
             OuvreDico.Close();
         }
 
-        public static void SaveText(string path, string motSaisie)
-        {   //crée un nouveau dossier 
-            FileStream listeMot = new FileStream(path, FileMode.Open, FileAccess.ReadWrite);
-            // Crée un StreaWriter pour écrire les variables ds le fichier txt
-            StreamWriter nvxMot = new StreamWriter(listeMot);
+        //public static void SaveText(string pathEcriture, string motSaisie)
+        //{
+        //    FileStream listeMot = new FileStream(pathEcriture , FileMode.Open, FileAccess.ReadWrite);
+        //    StreamWriter nvxMot = new StreamWriter(listeMot);
          
-            while (!string.IsNullOrEmpty(motSaisie))
-            {
-                nvxMot.WriteLine(motSaisie);
-            }
+        //    while (!string.IsNullOrEmpty(motSaisie))
+        //    {
+        //        nvxMot.WriteLine(motSaisie);
+        //    }
 
-            nvxMot.Close();
-            listeMot.Close();
+        //    nvxMot.Close();
+        //    listeMot.Close();
 
 
-        }
+        //}
 
         public static void TraitementTampon()
         {
@@ -71,7 +85,7 @@ namespace QuintoDll
 
                 if (!ListeMots.Contains(mot))
                 { ListeMots.Add(mot);
-                  Console.WriteLine(mot);
+
                 }                
             }
                   
