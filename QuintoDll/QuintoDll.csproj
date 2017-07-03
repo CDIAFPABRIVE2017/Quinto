@@ -43,6 +43,7 @@
     <Compile Include="ICollectionMetier.cs" />
     <Compile Include="Joueurs.cs" />
     <Compile Include="LancementManche.cs" />
+    <Compile Include="LancementPartieClass.cs" />
     <Compile Include="LoadSave.cs" />
     <Compile Include="OptionsClass.cs" />
     <Compile Include="PiocheClass.cs" />

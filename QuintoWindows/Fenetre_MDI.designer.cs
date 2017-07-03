@@ -37,7 +37,7 @@
             // btnNouvellePartie
             // 
             this.btnNouvellePartie.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNouvellePartie.Location = new System.Drawing.Point(313, 68);
+            this.btnNouvellePartie.Location = new System.Drawing.Point(244, 96);
             this.btnNouvellePartie.Name = "btnNouvellePartie";
             this.btnNouvellePartie.Size = new System.Drawing.Size(308, 38);
             this.btnNouvellePartie.TabIndex = 1;
@@ -48,7 +48,7 @@
             // btnAlimenterPioche
             // 
             this.btnAlimenterPioche.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlimenterPioche.Location = new System.Drawing.Point(313, 133);
+            this.btnAlimenterPioche.Location = new System.Drawing.Point(244, 161);
             this.btnAlimenterPioche.Name = "btnAlimenterPioche";
             this.btnAlimenterPioche.Size = new System.Drawing.Size(308, 38);
             this.btnAlimenterPioche.TabIndex = 2;
@@ -59,7 +59,7 @@
             // btnOption
             // 
             this.btnOption.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOption.Location = new System.Drawing.Point(313, 192);
+            this.btnOption.Location = new System.Drawing.Point(244, 220);
             this.btnOption.Name = "btnOption";
             this.btnOption.Size = new System.Drawing.Size(308, 38);
             this.btnOption.TabIndex = 3;
@@ -70,7 +70,7 @@
             // btnScore
             // 
             this.btnScore.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScore.Location = new System.Drawing.Point(313, 254);
+            this.btnScore.Location = new System.Drawing.Point(244, 282);
             this.btnScore.Name = "btnScore";
             this.btnScore.Size = new System.Drawing.Size(308, 38);
             this.btnScore.TabIndex = 4;
@@ -83,7 +83,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(948, 405);
+            this.ClientSize = new System.Drawing.Size(794, 460);
             this.Controls.Add(this.btnScore);
             this.Controls.Add(this.btnOption);
             this.Controls.Add(this.btnAlimenterPioche);

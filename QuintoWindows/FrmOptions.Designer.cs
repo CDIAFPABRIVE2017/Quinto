@@ -42,6 +42,7 @@
             this.gbSon = new System.Windows.Forms.GroupBox();
             this.btn_OffS = new System.Windows.Forms.RadioButton();
             this.btn_OnS = new System.Windows.Forms.RadioButton();
+            this.Enregistrer = new System.Windows.Forms.Button();
             this.gbNbrManches.SuspendLayout();
             this.gbLangages.SuspendLayout();
             this.gbMusique.SuspendLayout();
@@ -205,6 +206,16 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
+            // Enregistrer
+            // 
+            this.Enregistrer.Location = new System.Drawing.Point(117, 439);
+            this.Enregistrer.Name = "Enregistrer";
+            this.Enregistrer.Size = new System.Drawing.Size(75, 23);
+            this.Enregistrer.TabIndex = 0;
+            this.Enregistrer.Text = "Enregistrer";
+            this.Enregistrer.UseVisualStyleBackColor = true;
+            this.Enregistrer.Click += new System.EventHandler(this.Enrgistrer_Clk);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -224,6 +235,7 @@
             this.Controls.Add(this.gbMusique);
             this.Controls.Add(this.gbLangages);
             this.Controls.Add(this.gbNbrManches);
+            this.Controls.Add(this.Enregistrer);
             this.Name = "FrmOptions";
             this.Text = "Options";
             this.gbNbrManches.ResumeLayout(false);
@@ -254,6 +266,7 @@
         private System.Windows.Forms.GroupBox gbSon;
         private System.Windows.Forms.RadioButton btn_OffS;
         private System.Windows.Forms.RadioButton btn_OnS;
+        private System.Windows.Forms.Button btn_Enregistrer;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
