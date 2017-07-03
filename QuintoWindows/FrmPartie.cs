@@ -14,6 +14,7 @@ namespace QuintoWindows
 {
     public partial class FrmPartie : Form
     {
+        LancementManche manche = new LancementManche();
 
         enum EtatManche
         {
@@ -93,10 +94,7 @@ namespace QuintoWindows
 
         }
 
-        private void Partie_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
       
     }

@@ -424,6 +424,15 @@
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+            // 
+            // lblManche
+            // 
+            this.lblManche.AutoSize = true;
+            this.lblManche.Location = new System.Drawing.Point(76, 16);
+            this.lblManche.Name = "lblManche";
+            this.lblManche.Size = new System.Drawing.Size(41, 13);
+            this.lblManche.TabIndex = 5;
+            this.lblManche.Text = "Manche : ";
 
         }
 
@@ -461,5 +470,6 @@
         private System.Windows.Forms.TextBox txtNbrManches;
         private System.Windows.Forms.Label lblChrono;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblManche;
     }
 }
