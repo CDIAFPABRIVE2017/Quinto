@@ -12,14 +12,16 @@ namespace QuintoWindows
 {
     public partial class FrmOptions : Form
     {
-       
+        private Button Enregistrer;
 
-            
         public FrmOptions()
         {
             InitializeComponent();
         }
 
-       
+        private void Enrgistrer_Clk(object sender, EventArgs e)
+        {
+            //Méthode save pour sauvegarder choix options
+        }
     }
 }

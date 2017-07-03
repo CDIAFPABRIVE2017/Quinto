@@ -63,9 +63,43 @@ namespace QuintoDll
         }
 
         public int NbrErreur
-        { get => nbrErreur; set => nbrErreur = value; }
-        public int MancheEnCours { get => /*mancheEnCours*/1; set => mancheEnCours = value; }
-        public int NbrMancheMax { get => /*nbrMancheMax*/4; set => nbrMancheMax = value; }
+        {
+            get
+            {
+                return nbrErreur;
+            }
+
+            set
+            {
+                nbrErreur = value;
+            }
+        }
+
+        public int MancheEnCours
+        {
+            get
+            {
+                return mancheEnCours;
+            }
+
+            set
+            {
+                mancheEnCours = value;
+            }
+        }
+
+        public int NbrMancheMax
+        {
+            get
+            {
+                return nbrMancheMax;
+            }
+
+            set
+            {
+                nbrMancheMax = value;
+            }
+        }
 
 
 
@@ -147,10 +181,7 @@ namespace QuintoDll
             { 
             else return false;
             }
-     
-
-      
-
+        }
     }
 }
       

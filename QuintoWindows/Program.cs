@@ -16,7 +16,7 @@ namespace QuintoWindows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmQuinto());
+            Application.Run(new FrmOptions());
         }
     }
 }

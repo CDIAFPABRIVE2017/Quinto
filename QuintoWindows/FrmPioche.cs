@@ -15,6 +15,7 @@ namespace QuintoWindows
     public partial class FrmPioche : Form
     {
         
+
         public FrmPioche()
         {
             InitializeComponent();
@@ -45,7 +46,8 @@ namespace QuintoWindows
                     txtAjout.Focus();                    
                 }               
             }
-            //Méthode save dans dico à appeler 
+            //LoadSave.SaveText();
+            //Méthode save dans liste mots à appeler 
             //Fichiertxt.Add
         }
 
