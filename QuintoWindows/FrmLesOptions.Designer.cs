@@ -69,9 +69,10 @@
             this.btn_5Manches.Name = "btn_5Manches";
             this.btn_5Manches.Size = new System.Drawing.Size(78, 17);
             this.btn_5Manches.TabIndex = 6;
-            this.btn_5Manches.TabStop = true;
+            this.btn_5Manches.Tag = "3";
             this.btn_5Manches.Text = "5 Manches";
             this.btn_5Manches.UseVisualStyleBackColor = true;
+            this.btn_5Manches.CheckedChanged += new System.EventHandler(this.NbrManches_Changed);
             // 
             // btn_4Manches
             // 
@@ -80,9 +81,10 @@
             this.btn_4Manches.Name = "btn_4Manches";
             this.btn_4Manches.Size = new System.Drawing.Size(78, 17);
             this.btn_4Manches.TabIndex = 5;
-            this.btn_4Manches.TabStop = true;
+            this.btn_4Manches.Tag = "2";
             this.btn_4Manches.Text = "4 Manches";
             this.btn_4Manches.UseVisualStyleBackColor = true;
+            this.btn_4Manches.CheckedChanged += new System.EventHandler(this.NbrManches_Changed);
             // 
             // btn_3Manches
             // 
@@ -91,20 +93,24 @@
             this.btn_3Manches.Name = "btn_3Manches";
             this.btn_3Manches.Size = new System.Drawing.Size(78, 17);
             this.btn_3Manches.TabIndex = 5;
-            this.btn_3Manches.TabStop = true;
+            this.btn_3Manches.Tag = "1";
             this.btn_3Manches.Text = "3 Manches";
             this.btn_3Manches.UseVisualStyleBackColor = true;
+            this.btn_3Manches.CheckedChanged += new System.EventHandler(this.NbrManches_Changed);
             // 
             // btn_2Manches
             // 
             this.btn_2Manches.AutoSize = true;
+            this.btn_2Manches.Checked = true;
             this.btn_2Manches.Location = new System.Drawing.Point(58, 19);
             this.btn_2Manches.Name = "btn_2Manches";
             this.btn_2Manches.Size = new System.Drawing.Size(78, 17);
             this.btn_2Manches.TabIndex = 4;
             this.btn_2Manches.TabStop = true;
+            this.btn_2Manches.Tag = "0";
             this.btn_2Manches.Text = "2 Manches";
             this.btn_2Manches.UseVisualStyleBackColor = true;
+            this.btn_2Manches.CheckedChanged += new System.EventHandler(this.NbrManches_Changed);
             // 
             // gbLangages
             // 
@@ -131,6 +137,7 @@
             // btn_Fr
             // 
             this.btn_Fr.AutoSize = true;
+            this.btn_Fr.Checked = true;
             this.btn_Fr.Location = new System.Drawing.Point(6, 31);
             this.btn_Fr.Name = "btn_Fr";
             this.btn_Fr.Size = new System.Drawing.Size(65, 17);
@@ -153,6 +160,7 @@
             // btn_OffM
             // 
             this.btn_OffM.AutoSize = true;
+            this.btn_OffM.Checked = true;
             this.btn_OffM.Location = new System.Drawing.Point(110, 31);
             this.btn_OffM.Name = "btn_OffM";
             this.btn_OffM.Size = new System.Drawing.Size(39, 17);
@@ -168,7 +176,6 @@
             this.btn_OnM.Name = "btn_OnM";
             this.btn_OnM.Size = new System.Drawing.Size(39, 17);
             this.btn_OnM.TabIndex = 5;
-            this.btn_OnM.TabStop = true;
             this.btn_OnM.Text = "On";
             this.btn_OnM.UseVisualStyleBackColor = true;
             // 
@@ -186,6 +193,7 @@
             // btn_OffS
             // 
             this.btn_OffS.AutoSize = true;
+            this.btn_OffS.Checked = true;
             this.btn_OffS.Location = new System.Drawing.Point(110, 31);
             this.btn_OffS.Name = "btn_OffS";
             this.btn_OffS.Size = new System.Drawing.Size(39, 17);
@@ -201,7 +209,6 @@
             this.btn_OnS.Name = "btn_OnS";
             this.btn_OnS.Size = new System.Drawing.Size(39, 17);
             this.btn_OnS.TabIndex = 5;
-            this.btn_OnS.TabStop = true;
             this.btn_OnS.Text = "On";
             // 
             // btn_Enregistrer
@@ -214,7 +221,7 @@
             this.btn_Enregistrer.UseVisualStyleBackColor = true;
             this.btn_Enregistrer.Click += new System.EventHandler(this.Enregistrer_Clk);
             // 
-            // LesOptions
+            // FrmLesOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,7 +231,7 @@
             this.Controls.Add(this.gbMusique);
             this.Controls.Add(this.gbLangages);
             this.Controls.Add(this.gbNbrManches);
-            this.Name = "LesOptions";
+            this.Name = "FrmLesOptions";
             this.Text = "Options";
             this.gbNbrManches.ResumeLayout(false);
             this.gbNbrManches.PerformLayout();
