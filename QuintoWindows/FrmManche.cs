@@ -20,18 +20,11 @@ namespace QuintoWindows
         {
             InitializeComponent();
         }
-
-
         void GestionnaireMarche(EtatManche etatManche)
         {
             switch (etatManche)
             {
                 case EtatManche.Debut:
-                    foreach (Control button in panel1.Controls)
-                    {
-                        button.Enabled = true;
-                    }
-                    manche.MotADecouvrir = PiocheClass.ExtraireMot();
                     panel1.Enabled = true;
                     manche.MancheEnCours++;
                     manche.NbrErreur = 0;
@@ -39,28 +32,21 @@ namespace QuintoWindows
                     txtAfficheMot.Text = manche.ChartoString(manche.MotEncours);
                     lblNbrEssai.Text = "Nombre d'essais restant : " + (9 - manche.NbrErreur);
                     txtNbrManches.Text = "Manche :" + (manche.MancheEnCours + "/" + manche.NbrMancheMax);
-                    manche.PartieLancer = true;
-                    manche.AfficheChrono();
-                    lblChrono.Text = "Chrono : "+manche.ElapsedTime;
                     break;
                 case EtatManche.Gagne:
                     panel1.Enabled = false;
                     if (manche.MancheGagne())
                     {
-                        //if(manche.MancheEnCours<manche.NbrMancheMax)
-                        //{ }
                         MessageBox.Show("Félicitation vous avez trouvé le mot ! \r\n Passez à la manche suivante.", "Manche gagné", MessageBoxButtons.OK);
                         txtAfficheMot.Text = string.Empty;
                         GestionnaireMarche(EtatManche.Debut);
-                        manche.PartieLancer = false; 
                     }
                     break;
                 case EtatManche.Perdu:
                     panel1.Enabled = false;
                     if (manche.ManchePerdue())
                     {
-                        MessageBox.Show("Vous avez perdu :( !", "Partie perdue", MessageBoxButtons.OK);
-                        manche.PartieLancer = false; 
+                        MessageBox.Show("Vous avez perdu :( !", "Partie perdue", MessageBoxButtons.RetryCancel);
                     }
                     break;
                 default:

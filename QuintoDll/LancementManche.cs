@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using QuintoWindows;
 
-
 namespace QuintoDll
 {
     public enum EtatManche
@@ -15,11 +14,11 @@ namespace QuintoDll
         Gagne = 1,
         Perdu = 2,
     }
-    public enum Etatpartie
-    {
-        Debut = 0,
-        Fin = 1,
-    }
+    //public enum Etatpartie
+    //{
+    //    Debut = 0,
+    //    Fin = 1,
+    //}
     public class LancementManche
     {
         #region champs
@@ -30,13 +29,19 @@ namespace QuintoDll
         DateTime debut = new DateTime();
         DateTime fin = new DateTime();
         Stopwatch chrono = new Stopwatch();
-        TimeSpan ts; 
         string motADecouvrir;
         char[] motEncours;
         char lettre;
-        bool _partieLancer;
-        string elapsedTime;
+        bool _addErreur;
         #endregion
+
+        public LancementManche()
+        {
+            etat = EtatManche.Debut;
+            motADecouvrir = PiocheClass.ExtraireMot();
+            InitialiseMotEnCours();
+        }
+
 
         #region Propiréié
         public string MotADecouvrir
@@ -44,10 +49,6 @@ namespace QuintoDll
             get
             {
                 return motADecouvrir;
-            }
-            set
-            {
-                motADecouvrir = value;
             }
         }
 
@@ -127,52 +128,22 @@ namespace QuintoDll
                 etat = value;
             }
         }
-
-        public bool PartieLancer
-        {
-            get
-            {
-                return _partieLancer;
-            }
-
-            set
-            {
-                _partieLancer = value;
-            }
-        }
-
-        public string ElapsedTime
-        {
-            get
-            {
-                return elapsedTime;
-            }
-
-            set
-            {
-                elapsedTime = value;
-            }
-        }
         #endregion
+        //public void AfficheChrono()
+        //{
 
-        #region Méthode
 
-        public void AfficheChrono()
-        {
-            if (PartieLancer)
-            {
-                
-                chrono.Start();
-            }
-            
+        //    if (partielancer)
+        //    {
+        //        chrono.Start();
+        //    }
 
-            if (PartieLancer == false)
-            {
-                chrono.Stop();
-                ts = chrono.Elapsed;
-            }
-            ElapsedTime = String.Format("{0:00}", ts.Seconds);
-        }
+        //    if (partielancer == false)
+        //    {
+        //        chrono.Stop();
+        //        TimeSpan ts = chrono.Elapsed;
+        //    }
+        //}
 
 
         public string InitialiseMotEnCours()
@@ -238,8 +209,8 @@ namespace QuintoDll
                 return true;
             }
             else return false;
-         }
-        #endregion
+        }
+
 
 
     }
