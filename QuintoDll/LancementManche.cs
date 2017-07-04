@@ -37,12 +37,9 @@ namespace QuintoDll
 
         public LancementManche()
         {
-            NbrErreur = 0;
             etat = EtatManche.Debut;
             motADecouvrir = PiocheClass.ExtraireMot();
             InitialiseMotEnCours();
-            MancheGagne();
-            ManchePerdue();
         }
 
 

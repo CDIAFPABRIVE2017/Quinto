@@ -22,13 +22,13 @@ namespace QuintoWindows
         }
         void GestionnaireMarche(EtatManche etatManche)
         {
-            manche.MancheEnCours = 1;
             switch (etatManche)
             {
                 case EtatManche.Debut:
                     panel1.Enabled = true;
+                    manche.MancheEnCours++;
                     manche.NbrErreur = 0;
-                    //LettreSaise.Enabled = true;
+                    manche.InitialiseMotEnCours();
                     txtAfficheMot.Text = manche.ChartoString(manche.MotEncours);
                     lblNbrEssai.Text = "Nombre d'essais restant : " + (9 - manche.NbrErreur);
                     txtNbrManches.Text = "Manche :" + (manche.MancheEnCours + "/" + manche.NbrMancheMax);
@@ -38,7 +38,7 @@ namespace QuintoWindows
                     if (manche.MancheGagne())
                     {
                         MessageBox.Show("Félicitation vous avez trouvé le mot ! \r\n Passez à la manche suivante.", "Manche gagné", MessageBoxButtons.OK);
-                        manche.MancheEnCours++;
+                        txtAfficheMot.Text = string.Empty;
                         GestionnaireMarche(EtatManche.Debut);
                     }
                     break;
@@ -46,7 +46,7 @@ namespace QuintoWindows
                     panel1.Enabled = false;
                     if (manche.ManchePerdue())
                     {
-                        MessageBox.Show("Vous avez perdu :( !", "Partie perdue", MessageBoxButtons.OK);
+                        MessageBox.Show("Vous avez perdu :( !", "Partie perdue", MessageBoxButtons.RetryCancel);
                     }
                     break;
                 default:
@@ -82,15 +82,16 @@ namespace QuintoWindows
             {
                 manche.NbrErreur++;
                 lblNbrEssai.Text = "Nombre d'essais restant : " + (9 - manche.NbrErreur);
-               
             }
             if (manche.MancheGagne())
             {
                 GestionnaireMarche(EtatManche.Gagne);
+
             }
             if (manche.ManchePerdue())
             {
                 GestionnaireMarche(EtatManche.Perdu);
+                btnGeneric.Enabled = true;
             }
         }
     }
