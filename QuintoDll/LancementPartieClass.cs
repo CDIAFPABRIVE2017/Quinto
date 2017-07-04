@@ -10,11 +10,11 @@ namespace QuintoDll
     {
     # region Méthodes
 
-        public static double CalculScoreTotal()
-        {
-            //Somme scores des manches(class manche) / Nbr de mmanche (class options)
+        //public static double CalculScoreTotal()
+        //{
+        //    //Somme scores des manches(class manche) / Nbr de mmanche (class options)
 
-        }
+        //}
 
 
 

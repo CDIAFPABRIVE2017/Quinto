@@ -58,6 +58,12 @@
     <Compile Include="FrmAlimenterPioche.Designer.cs">
       <DependentUpon>FrmAlimenterPioche.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmManche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManche.Designer.cs">
+      <DependentUpon>FrmManche.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,9 +82,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs" />
-    <Compile Include="FrmPartie.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FrmPartie.cs" />
     <Compile Include="FrmPartie.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAlimenterPioche.resx">
       <DependentUpon>FrmAlimenterPioche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManche.resx">
+      <DependentUpon>FrmManche.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOptions.resx" />
     <EmbeddedResource Include="FrmScores.resx">

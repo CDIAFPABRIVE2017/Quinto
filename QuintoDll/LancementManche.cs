@@ -30,7 +30,8 @@ namespace QuintoDll
         Stopwatch chrono = new Stopwatch();
         string motADecouvrir;
         char[] motEncours;
-        string lettre;
+        char lettre;
+        bool _addErreur;
         #endregion
 
         public LancementManche()
@@ -39,10 +40,12 @@ namespace QuintoDll
             etat = EtatManche.Debut;
             motADecouvrir = PiocheClass.ExtraireMot();
             InitialiseMotEnCours();
-            AfficheUnderscore();
-
-
+            //AddErreur();
+            MancheGagne();
+            ManchePerdue();
         }
+
+
         #region Propiréié
         public string MotADecouvrir
         {
@@ -53,7 +56,7 @@ namespace QuintoDll
             }
         }
 
-        public string Lettre
+        public char Lettre
         {
             get
             {
@@ -70,8 +73,12 @@ namespace QuintoDll
         {
             get
             {
-                InitialiseMotEnCours();
+
                 return motEncours;
+            }
+            set
+            {
+                motEncours = value;
             }
         }
 
@@ -84,6 +91,10 @@ namespace QuintoDll
 
             set
             {
+                if (_addErreur)
+                {
+                    nbrErreur++;
+                }
                 nbrErreur = value;
             }
         }
@@ -92,7 +103,7 @@ namespace QuintoDll
         {
             get
             {
-                return mancheEnCours;
+                return 1 /*mancheEnCours*/;
             }
 
             set
@@ -105,7 +116,7 @@ namespace QuintoDll
         {
             get
             {
-                return nbrMancheMax;
+                return 5;
             }
 
             set
@@ -149,45 +160,38 @@ namespace QuintoDll
             motEncours = new char[MotADecouvrir.Length];
             for (int i = 0; i < MotADecouvrir.Length; i++)
             {
-                motEncours[i] = MotADecouvrir[i];
-            }
-
-            return new string(motEncours);
-        }
-
-        public string AfficheUnderscore()
-        {
-            for (int i = 0; i < MotADecouvrir.Length; i++)
-            {
                 motEncours[i] = '_';
             }
+
             return new string(motEncours);
         }
 
         public string DecouvreMot()
         {
+            _addErreur = true;
             for (int i = 0; i < MotADecouvrir.Length; i++)
             {
-                if (motADecouvrir[i] == Lettre[0])
+                if (motADecouvrir[i] == Lettre)
                 {
-                    motEncours[i] = Lettre[0];
+                    motEncours[i] = Lettre;
+                    _addErreur = false; 
                 }
             }
-            return new string(motEncours);
+            return new string(MotEncours);
         }
 
-        public bool AddErreur()
-        {
-            foreach (char i in MotEncours)
-            {
-                if (MotEncours[i].ToString() != Lettre)
-                {
-                    return true;
-                }
+        //public bool AddErreur()
+        //{
+        //    for (int i = 0; i < MotADecouvrir.Length; i++)
+        //    {
+        //        if (motADecouvrir[i] == Lettre)
+        //        {
+        //            return false;
+        //        }
 
-            }
-            return false;
-        }
+        //    }
+        //    return true;
+        //}
         public bool MancheGagne()
         {
             if (MotEncours.ToString() == MotADecouvrir && NbrErreur <= 9)
@@ -195,13 +199,19 @@ namespace QuintoDll
                 return true;
             }
 
-            //if (NbrErreur < 9)
-
             else return false;
-
-
-
         }
+
+        public bool ManchePerdue()
+        {
+            if (nbrErreur < 9)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+
 
     }
 }
