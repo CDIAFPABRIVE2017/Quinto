@@ -18,6 +18,7 @@ namespace QuintoWindows
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             PiocheClass.LoadPioche(Properties.Settings.Default.pathPioche);
+            
           
             Application.Run(new FrmQuinto());
         }

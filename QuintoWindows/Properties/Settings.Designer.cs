@@ -25,10 +25,22 @@ namespace QuintoWindows.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("F:\\Application AFPA\\Projet_Jeu_MPM precillia\\Pioche.txt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("E:\\test\\Pioche.txt")]
         public string pathPioche {
             get {
                 return ((string)(this["pathPioche"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int NbrM {
+            get {
+                return ((int)(this["NbrM"]));
+            }
+            set {
+                this["NbrM"] = value;
             }
         }
     }

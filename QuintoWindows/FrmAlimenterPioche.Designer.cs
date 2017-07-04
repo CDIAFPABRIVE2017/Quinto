@@ -52,6 +52,7 @@
             // 
             // btn_Ajout
             // 
+            this.btn_Ajout.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_Ajout.Location = new System.Drawing.Point(360, 142);
             this.btn_Ajout.Name = "btn_Ajout";
             this.btn_Ajout.Size = new System.Drawing.Size(74, 22);

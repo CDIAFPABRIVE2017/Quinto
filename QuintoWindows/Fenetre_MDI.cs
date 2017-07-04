@@ -49,6 +49,8 @@ namespace QuintoWindows
 
         private void FrmQuinto_Load(object sender, EventArgs e)
         {
+            
+
             if (PiocheClass.ListeMots.Count == 0)
             {
                 MessageBox.Show("La pioche est vide ! Veuillez l'alimenter dans ALIMENTER PIOCHE.", "Pioche vide", MessageBoxButtons.OK);
