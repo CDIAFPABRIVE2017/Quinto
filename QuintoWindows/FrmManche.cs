@@ -42,8 +42,9 @@ namespace QuintoWindows
                     lblNbrEssai.Text = "Nombre d'essais restant : " + (9 - manche.NbrErreur);
                     txtNbrManches.Text = "Manche :" + (partie.NumeroMancheEnCours + "/" + partie.NombreManches );
                     manche.PartieLancer = true;
+                    //lblChrono.Text = "Chrono : "+manche.;
                     manche.AfficheChrono();
-                    lblChrono.Text = "Chrono : "+manche.ElapsedTime;
+                  
                     break;
                 case EtatManche.Gagne:
                     panel1.Enabled = false;
@@ -81,16 +82,17 @@ namespace QuintoWindows
         private void Partie_Load(object sender, EventArgs e)
         {
             GestionnaireMarche(EtatManche.Debut);
+            //timer1.Start();
         }
         private void txtAfficheMot_TextChanged(object sender, EventArgs e)
         {
             txtAfficheMot.Text = manche.MotEncours.ToString();
         }
-        private void lblChrono_Click(object sender, EventArgs e)
+        
+        void timer1_Tick(object sender, EventArgs e)
         {
-
+           
         }
-
         private void LettreSaise(object sender, EventArgs e)
         {
             Button btnGeneric = sender as Button;
@@ -110,6 +112,12 @@ namespace QuintoWindows
                 GestionnaireMarche(EtatManche.Perdu);
                 btnGeneric.Enabled = true;
             }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            manche.Ts = manche.Chrono.Elapsed;
+            lblChrono.Text = manche.Ts.ToString();
         }
     }
 }
