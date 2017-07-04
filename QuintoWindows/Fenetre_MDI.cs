@@ -51,9 +51,7 @@ namespace QuintoWindows
         {
             if (PiocheClass.ListeMots.Count == 0)
             {
-                FrmAlimenterPioche alimenterPioche = new FrmAlimenterPioche();
-                alimenterPioche.MdiParent = this;
-                alimenterPioche.Show();
+                MessageBox.Show("La pioche est vide ! Veuillez l'alimenter dans ALIMENTER PIOCHE.", "Pioche vide", MessageBoxButtons.OK);
             }
         }
     }
