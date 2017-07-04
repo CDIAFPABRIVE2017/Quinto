@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using QuintoWindows;
 
 namespace QuintoDll
 {
     public enum EtatManche
     {
         Debut = 0,
-        Fin = 1,
-
+        Gagne = 1,
+        Perdu = 2,
     }
     public enum Etatpartie
     {
@@ -40,7 +41,6 @@ namespace QuintoDll
             etat = EtatManche.Debut;
             motADecouvrir = PiocheClass.ExtraireMot();
             InitialiseMotEnCours();
-            //AddErreur();
             MancheGagne();
             ManchePerdue();
         }
@@ -49,7 +49,6 @@ namespace QuintoDll
         #region Propiréié
         public string MotADecouvrir
         {
-
             get
             {
                 return motADecouvrir;
@@ -73,7 +72,6 @@ namespace QuintoDll
         {
             get
             {
-
                 return motEncours;
             }
             set
@@ -91,10 +89,6 @@ namespace QuintoDll
 
             set
             {
-                if (_addErreur)
-                {
-                    nbrErreur++;
-                }
                 nbrErreur = value;
             }
         }
@@ -103,7 +97,7 @@ namespace QuintoDll
         {
             get
             {
-                return 1 /*mancheEnCours*/;
+                return mancheEnCours;
             }
 
             set
@@ -116,7 +110,7 @@ namespace QuintoDll
         {
             get
             {
-                return 5;
+                return nbrMancheMax;
             }
 
             set
@@ -168,33 +162,42 @@ namespace QuintoDll
 
         public string DecouvreMot()
         {
-            _addErreur = true;
+
             for (int i = 0; i < MotADecouvrir.Length; i++)
             {
                 if (motADecouvrir[i] == Lettre)
                 {
                     motEncours[i] = Lettre;
-                    _addErreur = false; 
                 }
             }
             return new string(MotEncours);
         }
 
-        //public bool AddErreur()
-        //{
-        //    for (int i = 0; i < MotADecouvrir.Length; i++)
-        //    {
-        //        if (motADecouvrir[i] == Lettre)
-        //        {
-        //            return false;
-        //        }
+        public string ChartoString(char[] mot)
+        {
+            string retour = string.Empty;
+            foreach (char item in mot)
+            {
+                retour += item;
+            }
+            return retour;
+        }
 
-        //    }
-        //    return true;
-        //}
+        public bool AddErreur()
+        {
+            for (int i = 0; i < MotADecouvrir.Length; i++)
+            {
+                if (motADecouvrir[i] == Lettre)
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
         public bool MancheGagne()
         {
-            if (MotEncours.ToString() == MotADecouvrir && NbrErreur <= 9)
+            if (ChartoString(MotEncours) == MotADecouvrir && NbrErreur < 9)
             {
                 return true;
             }
@@ -204,7 +207,7 @@ namespace QuintoDll
 
         public bool ManchePerdue()
         {
-            if (nbrErreur < 9)
+            if (NbrErreur >= 9)
             {
                 return true;
             }

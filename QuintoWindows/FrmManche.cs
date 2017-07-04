@@ -20,23 +20,30 @@ namespace QuintoWindows
         {
             InitializeComponent();
         }
-
         void GestionnaireMarche(EtatManche etatManche)
         {
+            manche.MancheEnCours = 1;
             switch (etatManche)
             {
                 case EtatManche.Debut:
+                    panel1.Enabled = true;
                     manche.NbrErreur = 0;
-                    txtAfficheMot.Text = ChartoString(manche.MotEncours);
+                    //LettreSaise.Enabled = true;
+                    txtAfficheMot.Text = manche.ChartoString(manche.MotEncours);
                     lblNbrEssai.Text = "Nombre d'essais restant : " + (9 - manche.NbrErreur);
                     txtNbrManches.Text = "Manche :" + (manche.MancheEnCours + "/" + manche.NbrMancheMax);
                     break;
-                case EtatManche.Fin:
+                case EtatManche.Gagne:
                     panel1.Enabled = false;
                     if (manche.MancheGagne())
                     {
                         MessageBox.Show("Félicitation vous avez trouvé le mot ! \r\n Passez à la manche suivante.", "Manche gagné", MessageBoxButtons.OK);
+                        manche.MancheEnCours++;
+                        GestionnaireMarche(EtatManche.Debut);
                     }
+                    break;
+                case EtatManche.Perdu:
+                    panel1.Enabled = false;
                     if (manche.ManchePerdue())
                     {
                         MessageBox.Show("Vous avez perdu :( !", "Partie perdue", MessageBoxButtons.OK);
@@ -45,20 +52,12 @@ namespace QuintoWindows
                 default:
                     break;
             }
-
         }
 
-        private string ChartoString(char[] mot)
+        private void MessageBoxButtons_Click(object sender, EventArgs e)
         {
-            string retour = string.Empty;
-            foreach (char item in mot)
-            {
-                retour += item;
-            }
-            return retour;
+            GestionnaireMarche(EtatManche.Debut);
         }
-
-
 
         private void Partie_Load(object sender, EventArgs e)
         {
@@ -73,18 +72,26 @@ namespace QuintoWindows
 
         }
 
-        private void Lettre(object sender, EventArgs e)
+        private void LettreSaise(object sender, EventArgs e)
         {
             Button btnGeneric = sender as Button;
             manche.Lettre = Convert.ToChar(btnGeneric.Text);
             txtAfficheMot.Text = manche.DecouvreMot();
             btnGeneric.Enabled = false;
-
-        }
-
-        private void txtAfficheMot_TextChanged_1(object sender, EventArgs e)
-        {
-
+            if (manche.AddErreur())
+            {
+                manche.NbrErreur++;
+                lblNbrEssai.Text = "Nombre d'essais restant : " + (9 - manche.NbrErreur);
+               
+            }
+            if (manche.MancheGagne())
+            {
+                GestionnaireMarche(EtatManche.Gagne);
+            }
+            if (manche.ManchePerdue())
+            {
+                GestionnaireMarche(EtatManche.Perdu);
+            }
         }
     }
 }
