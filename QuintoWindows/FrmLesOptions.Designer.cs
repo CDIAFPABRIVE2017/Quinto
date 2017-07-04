@@ -101,12 +101,10 @@
             // btn_2Manches
             // 
             this.btn_2Manches.AutoSize = true;
-            this.btn_2Manches.Checked = true;
             this.btn_2Manches.Location = new System.Drawing.Point(58, 19);
             this.btn_2Manches.Name = "btn_2Manches";
             this.btn_2Manches.Size = new System.Drawing.Size(78, 17);
             this.btn_2Manches.TabIndex = 4;
-            this.btn_2Manches.TabStop = true;
             this.btn_2Manches.Tag = "0";
             this.btn_2Manches.Text = "2 Manches";
             this.btn_2Manches.UseVisualStyleBackColor = true;
@@ -130,19 +128,16 @@
             this.btn_En.Name = "btn_En";
             this.btn_En.Size = new System.Drawing.Size(59, 17);
             this.btn_En.TabIndex = 6;
-            this.btn_En.TabStop = true;
             this.btn_En.Text = "English";
             this.btn_En.UseVisualStyleBackColor = true;
             // 
             // btn_Fr
             // 
             this.btn_Fr.AutoSize = true;
-            this.btn_Fr.Checked = true;
             this.btn_Fr.Location = new System.Drawing.Point(6, 31);
             this.btn_Fr.Name = "btn_Fr";
             this.btn_Fr.Size = new System.Drawing.Size(65, 17);
             this.btn_Fr.TabIndex = 5;
-            this.btn_Fr.TabStop = true;
             this.btn_Fr.Text = "Français";
             this.btn_Fr.UseVisualStyleBackColor = true;
             // 
@@ -160,12 +155,10 @@
             // btn_OffM
             // 
             this.btn_OffM.AutoSize = true;
-            this.btn_OffM.Checked = true;
             this.btn_OffM.Location = new System.Drawing.Point(110, 31);
             this.btn_OffM.Name = "btn_OffM";
             this.btn_OffM.Size = new System.Drawing.Size(39, 17);
             this.btn_OffM.TabIndex = 6;
-            this.btn_OffM.TabStop = true;
             this.btn_OffM.Text = "Off";
             this.btn_OffM.UseVisualStyleBackColor = true;
             // 
@@ -193,12 +186,10 @@
             // btn_OffS
             // 
             this.btn_OffS.AutoSize = true;
-            this.btn_OffS.Checked = true;
             this.btn_OffS.Location = new System.Drawing.Point(110, 31);
             this.btn_OffS.Name = "btn_OffS";
             this.btn_OffS.Size = new System.Drawing.Size(39, 17);
             this.btn_OffS.TabIndex = 6;
-            this.btn_OffS.TabStop = true;
             this.btn_OffS.Text = "Off";
             this.btn_OffS.UseVisualStyleBackColor = true;
             // 
@@ -233,6 +224,7 @@
             this.Controls.Add(this.gbNbrManches);
             this.Name = "FrmLesOptions";
             this.Text = "Options";
+            this.Load += new System.EventHandler(this.LoadOptions);
             this.gbNbrManches.ResumeLayout(false);
             this.gbNbrManches.PerformLayout();
             this.gbLangages.ResumeLayout(false);

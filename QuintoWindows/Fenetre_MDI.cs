@@ -49,6 +49,8 @@ namespace QuintoWindows
 
         private void FrmQuinto_Load(object sender, EventArgs e)
         {
+            
+
             if (PiocheClass.ListeMots.Count == 0)
             {
                 FrmAlimenterPioche alimenterPioche = new FrmAlimenterPioche();

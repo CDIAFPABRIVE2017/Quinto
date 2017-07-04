@@ -21,8 +21,9 @@ namespace QuintoWindows
         }
 
         private void Enregistrer_Clk(object sender, EventArgs e)
-        {
-            
+        {           
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Vos options ont bien été enregistrées.", "Information", MessageBoxButtons.OK);
         }
         enum ContextesOptionsNbrManches
         {
@@ -56,7 +57,7 @@ namespace QuintoWindows
                 default:
                     break;
             }
-            MessageBox.Show("Vous avez choisi "+(textContexte), "Nombre de manches", MessageBoxButtons.OK);
+            
         }
 
         private void NbrManches_Changed(object sender, EventArgs e)
@@ -64,20 +65,25 @@ namespace QuintoWindows
             if (btn_2Manches.Checked)
             {
                 GestionnaireNbrManches(ContextesOptionsNbrManches.Manches2);
+                Properties.Settings.Default.NbrM = 2;
             }
             if (btn_3Manches.Checked)
             {
                 GestionnaireNbrManches(ContextesOptionsNbrManches.Manches3);
+                Properties.Settings.Default.NbrM = 3;
             }
             if (btn_4Manches.Checked)
             {
                 GestionnaireNbrManches(ContextesOptionsNbrManches.Manches4);
+                Properties.Settings.Default.NbrM = 4;
             }
             if (btn_5Manches.Checked)
             {
                 GestionnaireNbrManches(ContextesOptionsNbrManches.Manches5);
+                Properties.Settings.Default.NbrM = 5;
             }
 
+            //Méthode Thomas qui fontionne aussi.
             //foreach (Control item in gbNbrManches.Controls)
             //{
             //    if (((RadioButton)item).Checked)
@@ -89,6 +95,28 @@ namespace QuintoWindows
             //}
 
 
+        }
+
+        private void LoadOptions(object sender, EventArgs e)
+        {
+            switch (Properties.Settings.Default.NbrM)
+            {
+                case 2:
+                    btn_2Manches.Checked = true;
+                    break;
+                case 3:
+                    btn_3Manches.Checked = true;
+                    break;
+                case 4:
+                    btn_4Manches.Checked = true;
+                    break;
+                case 5:
+                    btn_5Manches.Checked = true;
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }
