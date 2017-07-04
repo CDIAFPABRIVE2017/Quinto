@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace QuintoWindows
 {
-    public partial class FrmOptions : Form
+    public partial class LesOptions : Form
     {
-        private Button Enregistrer;
-
-        public FrmOptions()
+        public LesOptions()
         {
             InitializeComponent();
         }
 
-        private void Enrgistrer_Clk(object sender, EventArgs e)
+        private void Enregistrer_Clk(object sender, EventArgs e)
         {
-            //Méthode save pour sauvegarder choix options
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace QuintoWindows
 {
-    public partial class FrmOptions
+    public partial class LesOptions
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.gbNbrManches = new System.Windows.Forms.GroupBox();
-            this.gbLangages = new System.Windows.Forms.GroupBox();
-            this.btn_2Manches = new System.Windows.Forms.RadioButton();
-            this.btn_3Manches = new System.Windows.Forms.RadioButton();
-            this.btn_4Manches = new System.Windows.Forms.RadioButton();
             this.btn_5Manches = new System.Windows.Forms.RadioButton();
-            this.btn_Fr = new System.Windows.Forms.RadioButton();
+            this.btn_4Manches = new System.Windows.Forms.RadioButton();
+            this.btn_3Manches = new System.Windows.Forms.RadioButton();
+            this.btn_2Manches = new System.Windows.Forms.RadioButton();
+            this.gbLangages = new System.Windows.Forms.GroupBox();
             this.btn_En = new System.Windows.Forms.RadioButton();
+            this.btn_Fr = new System.Windows.Forms.RadioButton();
             this.gbMusique = new System.Windows.Forms.GroupBox();
             this.btn_OffM = new System.Windows.Forms.RadioButton();
             this.btn_OnM = new System.Windows.Forms.RadioButton();
             this.gbSon = new System.Windows.Forms.GroupBox();
             this.btn_OffS = new System.Windows.Forms.RadioButton();
             this.btn_OnS = new System.Windows.Forms.RadioButton();
-            this.Enregistrer = new System.Windows.Forms.Button();
+            this.btn_Enregistrer = new System.Windows.Forms.Button();
             this.gbNbrManches.SuspendLayout();
             this.gbLangages.SuspendLayout();
             this.gbMusique.SuspendLayout();
@@ -62,38 +62,16 @@
             this.gbNbrManches.TabStop = false;
             this.gbNbrManches.Text = "Nombre de Manches";
             // 
-            // gbLangages
+            // btn_5Manches
             // 
-            this.gbLangages.Controls.Add(this.btn_En);
-            this.gbLangages.Controls.Add(this.btn_Fr);
-            this.gbLangages.Location = new System.Drawing.Point(75, 159);
-            this.gbLangages.Name = "gbLangages";
-            this.gbLangages.Size = new System.Drawing.Size(200, 79);
-            this.gbLangages.TabIndex = 1;
-            this.gbLangages.TabStop = false;
-            this.gbLangages.Text = "Langages";
-            // 
-            // btn_2Manches
-            // 
-            this.btn_2Manches.AutoSize = true;
-            this.btn_2Manches.Location = new System.Drawing.Point(58, 19);
-            this.btn_2Manches.Name = "btn_2Manches";
-            this.btn_2Manches.Size = new System.Drawing.Size(78, 17);
-            this.btn_2Manches.TabIndex = 4;
-            this.btn_2Manches.TabStop = true;
-            this.btn_2Manches.Text = "2 Manches";
-            this.btn_2Manches.UseVisualStyleBackColor = true;
-            // 
-            // btn_3Manches
-            // 
-            this.btn_3Manches.AutoSize = true;
-            this.btn_3Manches.Location = new System.Drawing.Point(58, 42);
-            this.btn_3Manches.Name = "btn_3Manches";
-            this.btn_3Manches.Size = new System.Drawing.Size(78, 17);
-            this.btn_3Manches.TabIndex = 5;
-            this.btn_3Manches.TabStop = true;
-            this.btn_3Manches.Text = "3 Manches";
-            this.btn_3Manches.UseVisualStyleBackColor = true;
+            this.btn_5Manches.AutoSize = true;
+            this.btn_5Manches.Location = new System.Drawing.Point(58, 88);
+            this.btn_5Manches.Name = "btn_5Manches";
+            this.btn_5Manches.Size = new System.Drawing.Size(78, 17);
+            this.btn_5Manches.TabIndex = 6;
+            this.btn_5Manches.TabStop = true;
+            this.btn_5Manches.Text = "5 Manches";
+            this.btn_5Manches.UseVisualStyleBackColor = true;
             // 
             // btn_4Manches
             // 
@@ -106,27 +84,38 @@
             this.btn_4Manches.Text = "4 Manches";
             this.btn_4Manches.UseVisualStyleBackColor = true;
             // 
-            // btn_5Manches
+            // btn_3Manches
             // 
-            this.btn_5Manches.AutoSize = true;
-            this.btn_5Manches.Location = new System.Drawing.Point(58, 88);
-            this.btn_5Manches.Name = "btn_5Manches";
-            this.btn_5Manches.Size = new System.Drawing.Size(78, 17);
-            this.btn_5Manches.TabIndex = 6;
-            this.btn_5Manches.TabStop = true;
-            this.btn_5Manches.Text = "5 Manches";
-            this.btn_5Manches.UseVisualStyleBackColor = true;
+            this.btn_3Manches.AutoSize = true;
+            this.btn_3Manches.Location = new System.Drawing.Point(58, 42);
+            this.btn_3Manches.Name = "btn_3Manches";
+            this.btn_3Manches.Size = new System.Drawing.Size(78, 17);
+            this.btn_3Manches.TabIndex = 5;
+            this.btn_3Manches.TabStop = true;
+            this.btn_3Manches.Text = "3 Manches";
+            this.btn_3Manches.UseVisualStyleBackColor = true;
             // 
-            // btn_Fr
+            // btn_2Manches
             // 
-            this.btn_Fr.AutoSize = true;
-            this.btn_Fr.Location = new System.Drawing.Point(6, 31);
-            this.btn_Fr.Name = "btn_Fr";
-            this.btn_Fr.Size = new System.Drawing.Size(65, 17);
-            this.btn_Fr.TabIndex = 5;
-            this.btn_Fr.TabStop = true;
-            this.btn_Fr.Text = "Français";
-            this.btn_Fr.UseVisualStyleBackColor = true;
+            this.btn_2Manches.AutoSize = true;
+            this.btn_2Manches.Location = new System.Drawing.Point(58, 19);
+            this.btn_2Manches.Name = "btn_2Manches";
+            this.btn_2Manches.Size = new System.Drawing.Size(78, 17);
+            this.btn_2Manches.TabIndex = 4;
+            this.btn_2Manches.TabStop = true;
+            this.btn_2Manches.Text = "2 Manches";
+            this.btn_2Manches.UseVisualStyleBackColor = true;
+            // 
+            // gbLangages
+            // 
+            this.gbLangages.Controls.Add(this.btn_En);
+            this.gbLangages.Controls.Add(this.btn_Fr);
+            this.gbLangages.Location = new System.Drawing.Point(75, 159);
+            this.gbLangages.Name = "gbLangages";
+            this.gbLangages.Size = new System.Drawing.Size(200, 79);
+            this.gbLangages.TabIndex = 1;
+            this.gbLangages.TabStop = false;
+            this.gbLangages.Text = "Langages";
             // 
             // btn_En
             // 
@@ -138,6 +127,17 @@
             this.btn_En.TabStop = true;
             this.btn_En.Text = "English";
             this.btn_En.UseVisualStyleBackColor = true;
+            // 
+            // btn_Fr
+            // 
+            this.btn_Fr.AutoSize = true;
+            this.btn_Fr.Location = new System.Drawing.Point(6, 31);
+            this.btn_Fr.Name = "btn_Fr";
+            this.btn_Fr.Size = new System.Drawing.Size(65, 17);
+            this.btn_Fr.TabIndex = 5;
+            this.btn_Fr.TabStop = true;
+            this.btn_Fr.Text = "Français";
+            this.btn_Fr.UseVisualStyleBackColor = true;
             // 
             // gbMusique
             // 
@@ -203,40 +203,28 @@
             this.btn_OnS.TabIndex = 5;
             this.btn_OnS.TabStop = true;
             this.btn_OnS.Text = "On";
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.SuspendLayout();
             // 
-            // Enregistrer
+            // btn_Enregistrer
             // 
-            this.Enregistrer.Location = new System.Drawing.Point(117, 439);
-            this.Enregistrer.Name = "Enregistrer";
-            this.Enregistrer.Size = new System.Drawing.Size(75, 23);
-            this.Enregistrer.TabIndex = 0;
-            this.Enregistrer.Text = "Enregistrer";
-            this.Enregistrer.UseVisualStyleBackColor = true;
-            this.Enregistrer.Click += new System.EventHandler(this.Enrgistrer_Clk);
+            this.btn_Enregistrer.Location = new System.Drawing.Point(133, 411);
+            this.btn_Enregistrer.Name = "btn_Enregistrer";
+            this.btn_Enregistrer.Size = new System.Drawing.Size(75, 23);
+            this.btn_Enregistrer.TabIndex = 4;
+            this.btn_Enregistrer.Text = "Enregistrer";
+            this.btn_Enregistrer.UseVisualStyleBackColor = true;
+            this.btn_Enregistrer.Click += new System.EventHandler(this.Enregistrer_Clk);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // FrmOptions
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "FrmOptions";
-            this.ResumeLayout(false);
-            // 
-            // FrmOptions
+            // LesOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 446);
+            this.ClientSize = new System.Drawing.Size(347, 504);
+            this.Controls.Add(this.btn_Enregistrer);
             this.Controls.Add(this.gbSon);
             this.Controls.Add(this.gbMusique);
             this.Controls.Add(this.gbLangages);
             this.Controls.Add(this.gbNbrManches);
-            this.Controls.Add(this.Enregistrer);
-            this.Name = "FrmOptions";
+            this.Name = "LesOptions";
             this.Text = "Options";
             this.gbNbrManches.ResumeLayout(false);
             this.gbNbrManches.PerformLayout();
@@ -267,7 +255,5 @@
         private System.Windows.Forms.RadioButton btn_OffS;
         private System.Windows.Forms.RadioButton btn_OnS;
         private System.Windows.Forms.Button btn_Enregistrer;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
-

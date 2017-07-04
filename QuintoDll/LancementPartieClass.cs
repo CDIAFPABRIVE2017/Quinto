@@ -9,6 +9,9 @@ namespace QuintoDll
     class LancementPartieClass
     {
     # region Méthodes
+        //Méthode StartPartie
+        //switch / contextes en fonction des options
+
 
         //public static double CalculScoreTotal()
         //{

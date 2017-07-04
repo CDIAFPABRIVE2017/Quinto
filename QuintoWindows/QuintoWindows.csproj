@@ -64,24 +64,18 @@
     <Compile Include="FrmManche.Designer.cs">
       <DependentUpon>FrmManche.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmOptions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmOptions.Designer.cs" />
     <Compile Include="FrmScores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmScores.Designer.cs">
       <DependentUpon>FrmScores.cs</DependentUpon>
     </Compile>
-    <Compile Include="MancheGagne.cs">
+    <Compile Include="FrmLesOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MancheGagne.Designer.cs" />
-    <Compile Include="Menu.cs">
-      <SubType>Form</SubType>
+    <Compile Include="FrmLesOptions.Designer.cs">
+      <DependentUpon>FrmLesOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Fenetre_MDI.resx">
@@ -93,12 +87,12 @@
     <EmbeddedResource Include="FrmManche.resx">
       <DependentUpon>FrmManche.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOptions.resx" />
     <EmbeddedResource Include="FrmScores.resx">
       <DependentUpon>FrmScores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MancheGagne.resx" />
-    <EmbeddedResource Include="Menu.resx" />
+    <EmbeddedResource Include="FrmLesOptions.resx">
+      <DependentUpon>FrmLesOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
