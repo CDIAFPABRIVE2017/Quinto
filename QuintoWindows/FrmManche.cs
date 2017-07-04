@@ -13,33 +13,51 @@ namespace QuintoWindows
 {
     public partial class FrmManche : Form
     {
-        LancementManche manche = new LancementManche();
-
+        LancementManche manche ;
+        LancementPartieClass partie = new LancementPartieClass(Properties.Settings.Default.NbrM);
 
         public FrmManche()
         {
             InitializeComponent();
+           
         }
+
+
         void GestionnaireMarche(EtatManche etatManche)
         {
-            manche.MancheEnCours = 1;
             switch (etatManche)
             {
                 case EtatManche.Debut:
+                    foreach (Control button in panel1.Controls)
+                    {
+                        button.Enabled = true;
+                    }
+                    manche = partie.Manches[partie.NumeroMancheEnCours];
+                    manche.MotADecouvrir = PiocheClass.ExtraireMot();
                     panel1.Enabled = true;
+                    partie.NumeroMancheEnCours++;
                     manche.NbrErreur = 0;
-                    //LettreSaise.Enabled = true;
+                    manche.InitialiseMotEnCours();
                     txtAfficheMot.Text = manche.ChartoString(manche.MotEncours);
                     lblNbrEssai.Text = "Nombre d'essais restant : " + (9 - manche.NbrErreur);
-                    txtNbrManches.Text = "Manche :" + (manche.MancheEnCours + "/" + manche.NbrMancheMax);
+                    txtNbrManches.Text = "Manche :" + (partie.NumeroMancheEnCours + "/" + partie.NombreManches );
+                    manche.PartieLancer = true;
+                    manche.AfficheChrono();
+                    lblChrono.Text = "Chrono : "+manche.ElapsedTime;
                     break;
                 case EtatManche.Gagne:
                     panel1.Enabled = false;
                     if (manche.MancheGagne())
                     {
-                        MessageBox.Show("Félicitation vous avez trouvé le mot ! \r\n Passez à la manche suivante.", "Manche gagné", MessageBoxButtons.OK);
-                        manche.MancheEnCours++;
-                        GestionnaireMarche(EtatManche.Debut);
+                        if (partie.NumeroMancheEnCours < partie.NombreManches)
+                        {
+                            MessageBox.Show("Félicitation vous avez trouvé le mot ! \r\n Passez à la manche suivante.", "Manche gagné", MessageBoxButtons.OK);
+                            txtAfficheMot.Text = string.Empty;
+                            GestionnaireMarche(EtatManche.Debut);
+                            manche.PartieLancer = false;
+                        }
+
+                        
                     }
                     break;
                 case EtatManche.Perdu:
@@ -47,6 +65,7 @@ namespace QuintoWindows
                     if (manche.ManchePerdue())
                     {
                         MessageBox.Show("Vous avez perdu :( !", "Partie perdue", MessageBoxButtons.OK);
+                        manche.PartieLancer = false; 
                     }
                     break;
                 default:
@@ -78,19 +97,18 @@ namespace QuintoWindows
             manche.Lettre = Convert.ToChar(btnGeneric.Text);
             txtAfficheMot.Text = manche.DecouvreMot();
             btnGeneric.Enabled = false;
-            if (manche.AddErreur())
-            {
-                manche.NbrErreur++;
+            
                 lblNbrEssai.Text = "Nombre d'essais restant : " + (9 - manche.NbrErreur);
-               
-            }
+
             if (manche.MancheGagne())
             {
                 GestionnaireMarche(EtatManche.Gagne);
+
             }
             if (manche.ManchePerdue())
             {
                 GestionnaireMarche(EtatManche.Perdu);
+                btnGeneric.Enabled = true;
             }
         }
     }

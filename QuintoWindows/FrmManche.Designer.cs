@@ -115,6 +115,8 @@
             // 
             // button26
             // 
+            this.button26.AccessibleDescription = "";
+            this.button26.AccessibleName = "";
             this.button26.Location = new System.Drawing.Point(154, 69);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(45, 45);
@@ -125,6 +127,8 @@
             // 
             // button25
             // 
+            this.button25.AccessibleDescription = "";
+            this.button25.AccessibleName = "";
             this.button25.Location = new System.Drawing.Point(221, 69);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(45, 45);
@@ -135,6 +139,8 @@
             // 
             // button24
             // 
+            this.button24.AccessibleDescription = "";
+            this.button24.AccessibleName = "";
             this.button24.Location = new System.Drawing.Point(283, 69);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(45, 45);
@@ -145,6 +151,8 @@
             // 
             // button23
             // 
+            this.button23.AccessibleDescription = "";
+            this.button23.AccessibleName = "";
             this.button23.Location = new System.Drawing.Point(350, 69);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(45, 45);
@@ -155,6 +163,8 @@
             // 
             // button22
             // 
+            this.button22.AccessibleDescription = "";
+            this.button22.AccessibleName = "";
             this.button22.Location = new System.Drawing.Point(409, 69);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(45, 45);
@@ -165,6 +175,8 @@
             // 
             // button21
             // 
+            this.button21.AccessibleDescription = "";
+            this.button21.AccessibleName = "";
             this.button21.Location = new System.Drawing.Point(470, 69);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(45, 45);
@@ -175,6 +187,8 @@
             // 
             // button20
             // 
+            this.button20.AccessibleDescription = "";
+            this.button20.AccessibleName = "";
             this.button20.Location = new System.Drawing.Point(530, 69);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(45, 45);
@@ -185,6 +199,8 @@
             // 
             // button19
             // 
+            this.button19.AccessibleDescription = "";
+            this.button19.AccessibleName = "";
             this.button19.Location = new System.Drawing.Point(587, 69);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(45, 45);
@@ -195,6 +211,8 @@
             // 
             // button18
             // 
+            this.button18.AccessibleDescription = "";
+            this.button18.AccessibleName = "";
             this.button18.Location = new System.Drawing.Point(154, 126);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(45, 45);
@@ -205,6 +223,8 @@
             // 
             // button17
             // 
+            this.button17.AccessibleDescription = "";
+            this.button17.AccessibleName = "";
             this.button17.Location = new System.Drawing.Point(221, 126);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(45, 45);
@@ -215,6 +235,8 @@
             // 
             // button16
             // 
+            this.button16.AccessibleDescription = "";
+            this.button16.AccessibleName = "";
             this.button16.Location = new System.Drawing.Point(283, 126);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(45, 45);
@@ -225,6 +247,8 @@
             // 
             // button15
             // 
+            this.button15.AccessibleDescription = "";
+            this.button15.AccessibleName = "";
             this.button15.Location = new System.Drawing.Point(350, 126);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(45, 45);
@@ -235,6 +259,8 @@
             // 
             // button14
             // 
+            this.button14.AccessibleDescription = "";
+            this.button14.AccessibleName = "";
             this.button14.Location = new System.Drawing.Point(409, 126);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(45, 45);
@@ -245,6 +271,8 @@
             // 
             // button13
             // 
+            this.button13.AccessibleDescription = "";
+            this.button13.AccessibleName = "";
             this.button13.Location = new System.Drawing.Point(470, 126);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(45, 45);
@@ -255,6 +283,8 @@
             // 
             // btnT
             // 
+            this.btnT.AccessibleDescription = "";
+            this.btnT.AccessibleName = "";
             this.btnT.AutoSize = true;
             this.btnT.Location = new System.Drawing.Point(283, 17);
             this.btnT.Name = "btnT";
@@ -266,6 +296,8 @@
             // 
             // btnY
             // 
+            this.btnY.AccessibleDescription = "";
+            this.btnY.AccessibleName = "";
             this.btnY.AutoSize = true;
             this.btnY.Location = new System.Drawing.Point(350, 17);
             this.btnY.Name = "btnY";
@@ -277,6 +309,8 @@
             // 
             // btnU
             // 
+            this.btnU.AccessibleDescription = "";
+            this.btnU.AccessibleName = "";
             this.btnU.AutoSize = true;
             this.btnU.Location = new System.Drawing.Point(409, 17);
             this.btnU.Name = "btnU";
@@ -288,6 +322,8 @@
             // 
             // button9
             // 
+            this.button9.AccessibleDescription = "";
+            this.button9.AccessibleName = "";
             this.button9.AutoSize = true;
             this.button9.Location = new System.Drawing.Point(470, 17);
             this.button9.Name = "button9";
@@ -299,6 +335,8 @@
             // 
             // button8
             // 
+            this.button8.AccessibleDescription = "";
+            this.button8.AccessibleName = "";
             this.button8.AutoSize = true;
             this.button8.Location = new System.Drawing.Point(530, 17);
             this.button8.Name = "button8";
@@ -310,6 +348,8 @@
             // 
             // button7
             // 
+            this.button7.AccessibleDescription = "";
+            this.button7.AccessibleName = "";
             this.button7.AutoSize = true;
             this.button7.Location = new System.Drawing.Point(587, 17);
             this.button7.Name = "button7";
@@ -321,6 +361,8 @@
             // 
             // button6
             // 
+            this.button6.AccessibleDescription = "";
+            this.button6.AccessibleName = "";
             this.button6.Location = new System.Drawing.Point(22, 69);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(45, 45);
@@ -331,6 +373,8 @@
             // 
             // button5
             // 
+            this.button5.AccessibleDescription = "";
+            this.button5.AccessibleName = "";
             this.button5.Location = new System.Drawing.Point(86, 69);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(45, 45);
@@ -341,6 +385,8 @@
             // 
             // btnR
             // 
+            this.btnR.AccessibleDescription = "";
+            this.btnR.AccessibleName = "";
             this.btnR.AutoSize = true;
             this.btnR.Location = new System.Drawing.Point(221, 17);
             this.btnR.Name = "btnR";
@@ -352,6 +398,8 @@
             // 
             // btnZ
             // 
+            this.btnZ.AccessibleDescription = "";
+            this.btnZ.AccessibleName = "";
             this.btnZ.AutoSize = true;
             this.btnZ.Location = new System.Drawing.Point(86, 17);
             this.btnZ.Name = "btnZ";
@@ -363,6 +411,8 @@
             // 
             // btnE
             // 
+            this.btnE.AccessibleDescription = "";
+            this.btnE.AccessibleName = "";
             this.btnE.AutoSize = true;
             this.btnE.Location = new System.Drawing.Point(154, 17);
             this.btnE.Name = "btnE";
@@ -374,6 +424,8 @@
             // 
             // btnA
             // 
+            this.btnA.AccessibleDescription = "";
+            this.btnA.AccessibleName = "";
             this.btnA.AutoSize = true;
             this.btnA.Location = new System.Drawing.Point(22, 17);
             this.btnA.Name = "btnA";
