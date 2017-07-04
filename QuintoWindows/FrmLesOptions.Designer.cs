@@ -1,6 +1,6 @@
 ﻿namespace QuintoWindows
 {
-    public partial class LesOptions
+    public partial class FrmLesOptions
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

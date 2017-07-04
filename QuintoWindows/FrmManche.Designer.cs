@@ -68,6 +68,7 @@
             // 
             this.lblNbrEssai.AutoSize = true;
             this.lblNbrEssai.Location = new System.Drawing.Point(69, 64);
+            this.lblNbrEssai.Name = "lblNbrEssai";
             this.lblNbrEssai.Size = new System.Drawing.Size(0, 13);
             this.lblNbrEssai.TabIndex = 0;
             // 
@@ -78,6 +79,7 @@
             this.txtAfficheMot.ReadOnly = true;
             this.txtAfficheMot.Size = new System.Drawing.Size(428, 20);
             this.txtAfficheMot.TabIndex = 1;
+            this.txtAfficheMot.TextChanged += new System.EventHandler(this.txtAfficheMot_TextChanged_1);
             // 
             // panel1
             // 
@@ -389,7 +391,6 @@
             this.txtNbrManches.ReadOnly = true;
             this.txtNbrManches.Size = new System.Drawing.Size(315, 20);
             this.txtNbrManches.TabIndex = 4;
-            this.txtNbrManches.TextChanged += new System.EventHandler(this.txtNbrManches_TextChanged);
             // 
             // lblChrono
             // 

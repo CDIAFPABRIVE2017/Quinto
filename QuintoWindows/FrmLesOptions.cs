@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuintoWindows
 {
-    public partial class LesOptions : Form
+    public partial class FrmLesOptions : Form
     {
-        public LesOptions()
+        public FrmLesOptions()
         {
             InitializeComponent();
         }

@@ -37,7 +37,7 @@ namespace QuintoWindows
 
         private void btnOption_Click(object sender, EventArgs e)
         {
-            FrmOptions fOptions = new FrmOptions();
+            FrmLesOptions fOptions = new FrmLesOptions();
             fOptions.Show();
         }
 

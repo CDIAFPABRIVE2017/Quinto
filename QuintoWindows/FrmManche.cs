@@ -28,6 +28,8 @@ namespace QuintoWindows
                 case EtatManche.Debut:
                     manche.NbrErreur = 0;
                     txtAfficheMot.Text = ChartoString(manche.MotEncours);
+                    lblNbrEssai.Text = "Nombre d'essais restant : " + (9 - manche.NbrErreur);
+                    txtNbrManches.Text = "Manche :" + (manche.MancheEnCours + "/" + manche.NbrMancheMax);
                     break;
                 case EtatManche.Fin:
                     panel1.Enabled = false;
@@ -71,20 +73,17 @@ namespace QuintoWindows
 
         }
 
-        private void txtNbrManches_TextChanged(object sender, EventArgs e)
-        {
-            txtNbrManches.Text = "Manche :"+(manche.MancheEnCours + "/" + manche.NbrMancheMax);
-        }
-        private void lblNbrEssai_TextChanged(object sender, EventArgs e)
-        {
-            lblNbrEssai.Text = "Nombre d'essais restant :" + (9 - manche.NbrErreur);
-        }
         private void Lettre(object sender, EventArgs e)
         {
             Button btnGeneric = sender as Button;
             manche.Lettre = Convert.ToChar(btnGeneric.Text);
             txtAfficheMot.Text = manche.DecouvreMot();
             btnGeneric.Enabled = false;
+
+        }
+
+        private void txtAfficheMot_TextChanged_1(object sender, EventArgs e)
+        {
 
         }
     }
