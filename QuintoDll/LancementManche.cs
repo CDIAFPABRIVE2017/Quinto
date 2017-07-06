@@ -36,7 +36,6 @@ namespace QuintoDll
         char[] motEncours;
         char lettre;
         bool _partieLancer;
-        string elapsedTime;
         #endregion
 
         #region Propiréié
@@ -142,19 +141,6 @@ namespace QuintoDll
             }
         }
 
-        public string ElapsedTime
-        {
-            get
-            {
-                return elapsedTime;
-            }
-
-            set
-            {
-                elapsedTime = value;
-            }
-        }
-
         public int TempsPasse
         {
             get
@@ -164,6 +150,32 @@ namespace QuintoDll
 
           
         }
+
+        public TimeSpan Ts
+        {
+            get
+            {
+                return ts;
+            }
+
+            set
+            {
+                ts = value;
+            }
+        }
+
+        public Stopwatch Chrono
+        {
+            get
+            {
+                return chrono;
+            }
+
+            set
+            {
+                chrono = value;
+            }
+        }
         #endregion
 
         #region Méthode
@@ -172,16 +184,17 @@ namespace QuintoDll
         {
             if (PartieLancer)
             {
-                
-                chrono.Start();
+
+                Chrono.Start();
             }
-            
+
 
             if (PartieLancer == false)
             {
-                
+                Chrono.Stop();
             }
-            ElapsedTime = String.Format("{0:00}", ts.Seconds);
+            Ts = Chrono.Elapsed;
+
         }
 
 
@@ -226,8 +239,8 @@ namespace QuintoDll
         {
             if (ChartoString(MotEncours) == MotADecouvrir && NbrErreur < 9)
             {
-                chrono.Stop();
-                tempsPasse = chrono.Elapsed.Seconds;
+                Chrono.Stop();
+                tempsPasse = Chrono.Elapsed.Seconds;
                 return true;
             }
            
