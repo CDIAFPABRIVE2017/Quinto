@@ -36,6 +36,13 @@ namespace QuintoDll
         char[] motEncours;
         char lettre;
         bool _partieLancer;
+        string elapsedTime;
+        int _scoreManche;
+        //TimeSpan dure;
+        //DateTime start;
+        //string dureChrono;
+
+
         #endregion
 
         #region Propiréié
@@ -141,6 +148,20 @@ namespace QuintoDll
             }
         }
 
+        public string ElapsedTime
+        {
+            get
+            {
+                return elapsedTime;
+            }
+
+            set
+            {
+                elapsedTime = value;
+            }
+        }
+
+        
         public int TempsPasse
         {
             get
@@ -148,53 +169,51 @@ namespace QuintoDll
                 return tempsPasse;
             }
 
-          
+            set
+            {
+                tempsPasse = value;
+            }
         }
 
-        public TimeSpan Ts
+        public int ScoreManche
         {
             get
             {
-                return ts;
+                return _scoreManche;
             }
 
             set
             {
-                ts = value;
+                _scoreManche = value;
             }
         }
 
-        public Stopwatch Chrono
-        {
-            get
-            {
-                return chrono;
-            }
-
-            set
-            {
-                chrono = value;
-            }
-        }
+        //public TimeSpan Dure { get => dure; set => dure = value; }
+        //public DateTime Start { get => start; set => start = value; }
+        //public string DureChrono { get => dureChrono; set => dureChrono = value; }
         #endregion
 
         #region Méthode
 
+        //public void Chrono()
+        //{
+        //    start = DateTime.Now;
+
+        //    dure = DateTime.Now.Subtract(start);
+
+        //    string dureChrono = string.Format(
+        //        "Chrono :{0}s ",
+        //        Dure.Seconds);
+        //}
         public void AfficheChrono()
         {
             if (PartieLancer)
             {
-
-                Chrono.Start();
+                
+                chrono.Start();
             }
 
-
-            if (PartieLancer == false)
-            {
-                Chrono.Stop();
-            }
-            Ts = Chrono.Elapsed;
-
+            ElapsedTime = String.Format("{0:00}", ts.Seconds);
         }
 
 
@@ -239,8 +258,8 @@ namespace QuintoDll
         {
             if (ChartoString(MotEncours) == MotADecouvrir && NbrErreur < 9)
             {
-                Chrono.Stop();
-                tempsPasse = Chrono.Elapsed.Seconds;
+                chrono.Stop();
+                TempsPasse = chrono.Elapsed.Seconds;
                 return true;
             }
            
@@ -255,7 +274,13 @@ namespace QuintoDll
             }
             else return false;
          }
-        #endregion
+
+        public int CalculScoreManche ()
+        {
+            ScoreManche = TempsPasse + (NbrErreur * 7);
+            return ScoreManche;
+        }
+            #endregion
 
 
     }

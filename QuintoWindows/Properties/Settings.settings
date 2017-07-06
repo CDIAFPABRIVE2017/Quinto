@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="pathPioche" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">E:\test\Pioche.text</Value>
+      <Value Profile="(Default)">F:\Application AFPA\Projet_Jeu_MPM precillia\Pioche.txt</Value>
     </Setting>
     <Setting Name="NbrM" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>
