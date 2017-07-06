@@ -451,7 +451,6 @@
             this.lblChrono.Size = new System.Drawing.Size(41, 13);
             this.lblChrono.TabIndex = 5;
             this.lblChrono.Text = "Chrono";
-            this.lblChrono.Click += new System.EventHandler(this.lblChrono_Click);
             // 
             // timer1
             // 

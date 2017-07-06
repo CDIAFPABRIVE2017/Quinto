@@ -43,7 +43,7 @@ namespace QuintoWindows
                     txtNbrManches.Text = "Manche :" + (partie.NumeroMancheEnCours + "/" + partie.NombreManches );
                     manche.PartieLancer = true;
                     manche.AfficheChrono();
-                    lblChrono.Text = "Chrono : "+manche.ElapsedTime;
+                    //manche.Chrono();
                     break;
                 case EtatManche.Gagne:
                     panel1.Enabled = false;
@@ -51,7 +51,7 @@ namespace QuintoWindows
                     {
                         if (partie.NumeroMancheEnCours < partie.NombreManches)
                         {
-                            MessageBox.Show("Félicitation vous avez trouvé le mot ! \r\n Passez à la manche suivante.", "Manche gagné", MessageBoxButtons.OK);
+                            MessageBox.Show("Félicitation vous avez trouvé le mot ! \r\n Votre score est "+ manche.CalculScoreManche() +"! \r\n Passez à la manche suivante.", "Manche gagné", MessageBoxButtons.OK);
                             txtAfficheMot.Text = string.Empty;
                             GestionnaireMarche(EtatManche.Debut);
                             manche.PartieLancer = false;
@@ -65,7 +65,7 @@ namespace QuintoWindows
                     if (manche.ManchePerdue())
                     {
                         MessageBox.Show("Vous avez perdu :( !", "Partie perdue", MessageBoxButtons.OK);
-                        manche.PartieLancer = false; 
+
                     }
                     break;
                 default:
@@ -85,10 +85,6 @@ namespace QuintoWindows
         private void txtAfficheMot_TextChanged(object sender, EventArgs e)
         {
             txtAfficheMot.Text = manche.MotEncours.ToString();
-        }
-        private void lblChrono_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void LettreSaise(object sender, EventArgs e)

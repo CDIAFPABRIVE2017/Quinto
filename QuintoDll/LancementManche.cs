@@ -37,6 +37,12 @@ namespace QuintoDll
         char lettre;
         bool _partieLancer;
         string elapsedTime;
+        int _scoreManche;
+        //TimeSpan dure;
+        //DateTime start;
+        //string dureChrono;
+
+
         #endregion
 
         #region Propiréié
@@ -155,6 +161,7 @@ namespace QuintoDll
             }
         }
 
+        
         public int TempsPasse
         {
             get
@@ -162,12 +169,42 @@ namespace QuintoDll
                 return tempsPasse;
             }
 
-          
+            set
+            {
+                tempsPasse = value;
+            }
         }
+
+        public int ScoreManche
+        {
+            get
+            {
+                return _scoreManche;
+            }
+
+            set
+            {
+                _scoreManche = value;
+            }
+        }
+
+        //public TimeSpan Dure { get => dure; set => dure = value; }
+        //public DateTime Start { get => start; set => start = value; }
+        //public string DureChrono { get => dureChrono; set => dureChrono = value; }
         #endregion
 
         #region Méthode
 
+        //public void Chrono()
+        //{
+        //    start = DateTime.Now;
+
+        //    dure = DateTime.Now.Subtract(start);
+
+        //    string dureChrono = string.Format(
+        //        "Chrono :{0}s ",
+        //        Dure.Seconds);
+        //}
         public void AfficheChrono()
         {
             if (PartieLancer)
@@ -175,12 +212,7 @@ namespace QuintoDll
                 
                 chrono.Start();
             }
-            
 
-            if (PartieLancer == false)
-            {
-                
-            }
             ElapsedTime = String.Format("{0:00}", ts.Seconds);
         }
 
@@ -227,7 +259,7 @@ namespace QuintoDll
             if (ChartoString(MotEncours) == MotADecouvrir && NbrErreur < 9)
             {
                 chrono.Stop();
-                tempsPasse = chrono.Elapsed.Seconds;
+                TempsPasse = chrono.Elapsed.Seconds;
                 return true;
             }
            
@@ -242,7 +274,13 @@ namespace QuintoDll
             }
             else return false;
          }
-        #endregion
+
+        public int CalculScoreManche ()
+        {
+            ScoreManche = TempsPasse + (NbrErreur * 7);
+            return ScoreManche;
+        }
+            #endregion
 
 
     }
